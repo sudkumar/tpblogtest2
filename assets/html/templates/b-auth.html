@@ -1,0 +1,88 @@
+
+<div data-ng-init="wants='login'" class="modal__wrapper auth-modal">
+  <div class="modal__container sm">
+    <div class="swap__container">
+      <div data-ng-class="{'active': wants == 'login'}" class="swap__section swap-left">
+        <!-- inlucde the login form	-->
+        <!-- add the header-->
+        <div class="modal__header">
+          <div class="title">Login</div><span data-ng-click="closeModal()" class="modal__close"><i class="fa fa-close"></i></span>
+        </div>
+        <div class="modal__body">
+          <!-- create a login form for email and password-->
+          <form name="loginForm" novalidate="novalidate" class="login-form">
+            <fieldset class="input__group fl">
+              <input type="email" id="email" required="required" class="rnd"/>
+              <label for="email">Email</label>
+            </fieldset>
+            <fieldset class="input__group fl">
+              <input type="password" id="password" required="required" class="rnd"/>
+              <label for="password">Password</label>
+            </fieldset>
+            <fieldset class="remember-forgot">
+              <div class="remember rc__group">
+                <input type="checkbox" id="rememberMe" class="rc__input"/>
+                <label for="rememberMe" class="rc__btn checkbox"></label>
+                <label for="rememberMe" class="rc__label">Remember me</label>
+              </div>
+              <div class="forgot"><a href="">Forgot Password?</a></div>
+            </fieldset>
+            <fieldset class="input__group">
+              <button type="submit" ng-disabled="loginForm.$invalid" class="btn submit">Login</button>
+            </fieldset>
+          </form>
+          <!-- here ends the login form	-->
+          <!-- Here give other options to login -->
+          <div class="other-options">
+            <p>Or use your social network</p>
+            <div class="options">
+              <div class="option">
+                <button type="button" class="btn"><i class="fa fa-facebook"></i></button>
+              </div>
+              <div class="option">
+                <button type="button" class="btn"><i class="fa fa-google-plus"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- here ends the other options-->
+        </div>
+        <!-- now let the user to signup-->
+        <div class="modal__footer">
+          <p>Don't have an account ? Quick <button class="btn link" data-ng-click="wants = 'signup'">Signup</button></p>
+        </div>
+      </div>
+      <div data-ng-class="{'active': wants == 'signup'}" class="swap__section swap-right">
+        <!-- include the signup form-->
+        <div class="modal__header">
+          <div class="title">Signup</div><span data-ng-click="closeModal()" class="modal__close"><i class="fa fa-close"></i></span>
+        </div>
+        <div class="modal__body">
+          <form name="signupForm" novalidate="novalidate" class="signup-form">
+            <fieldset class="input__group fl">
+              <input type="text" id="name" name="name" required="required" class="rnd"/>
+              <label for="name">Name</label>
+            </fieldset>
+            <fieldset class="input__group fl">
+              <input type="email" id="email" name="email" required="required" class="rnd"/>
+              <label for="email">Email</label>
+            </fieldset>
+            <fieldset class="input__group fl">
+              <input type="password" id="password" name="password" required="required" class="rnd"/>
+              <label for="password">Password</label>
+            </fieldset>
+            <fieldset class="input__group fl">
+              <input type="password" id="rePassword" name="rePassword" required="required" class="rnd"/>
+              <label for="rePassword">Confirm Password</label>
+            </fieldset>
+            <filedset class="input__group">
+              <button type="submit" data-ng-disabled="signupForm.$invalid" class="btn submit">Submit</button>
+            </filedset>
+          </form>
+        </div>
+        <div class="modal__footer">
+          <p>Already have an account? <button class="btn link" data-ng-click="wants = 'login'">Login here.<button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
