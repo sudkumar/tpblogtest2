@@ -1,0 +1,31 @@
+nav.navbar.cf(data-ng-controller="MenuController as mc")
+	#mobileMenu.mobile-menu-container(data-ng-class="{'mobile-menu-container--active': mc.showMenu}" data-ng-click="mc.showMenu = !mc.showMenu")
+		ul.list
+			li.list__item
+				a.logo( ui-sref="home") Tourepedia
+			li.list__item
+				a.btn( ui-sref="home") Plan A Trip
+			li.list__item
+				button.btn(data-ng-click="mc.loginSignup()") login/Signup
+		
+	ul.navbar__left.list
+		li.list__item.list__item--inline.navbar__toggle
+			div.trigger.trigger--left.trigger--inactive Menu
+				span.trigger__icon
+
+		li.list__item.list__item--inline
+			a.logo(ui-sref="home") Tourepedia
+
+	ul.navbar__right.list
+		li.list__item.list__item--inline.navbar__toggle-items
+			a.btn(ui-sref="home") Plan A Trip
+		li.list__item.list__item--inline
+			button.btn(data-ng-hide="mc.loggedIn" data-ng-click="mc.loginSignup()") Login/Signup
+		li.list__item.list__item--inline
+			button.btn.avatar.dropdown(b-dropdown data-ng-show="mc.loggedIn")
+				img.avatar__image.avatar__image--x-small(src="./assets/img/avatar.png" alt="user icon")
+			ul.list
+				li.list__item.list__item--inline
+					a.btn(href="#") Account
+
+	

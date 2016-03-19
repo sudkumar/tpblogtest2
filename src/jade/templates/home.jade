@@ -1,0 +1,81 @@
+mixin card-blog(title)
+  .card.card--blog
+    img.card__image(src="./assets/img/blog1.jpg"  alt="Blog Image")
+    .card__title  This is the title for the blog.
+    .card__body
+      a.blog__info.avatar(ui-sref="author")
+        img.avatar__image.avatar__image--x-small(src="./assets/img/author1.png" alt="author")
+        span.avatar__text
+          span.avatar__title Sudhir Mitahrwal
+          span.avatar__sub-title July 16, 2016  
+            span.dot-devider &middot;  
+            | 4 min
+      .blog__description This is some descriptions of the blog. This could be set to a maximum size and then use ...
+    .card__footer
+      .btn-list
+        a.btn-list__item.btn(ui-sref="blog")
+          i.fa.fa-arrow-right
+          |  Read
+        button.btn-list__item.btn(type="button")
+          i.fa.fa-thumbs-up
+          |  Like
+        button.btn-list__item.btn(type="button")
+          i.fa.fa-share
+          |  Share
+
+mixin trending(title, bgImg)
+    .trending-blog
+      .trending-blog__image(style="background-image: url(#{bgImg})")
+      .trending-blog__content
+        .blog-title #{title}
+        a.blog-info.avatar(ui-sref="author")
+          img.avatar__image.avatar__image--x-small(src="./assets/img/author1.png" alt="author")
+          span.avatar__text
+            span.avatar__title Sudhir Mitahrwal
+            span.avatar__sub-title July 16, 2016
+              span.dot-devider &middot;
+              | 4 min
+        .blog-description
+          | This is some text about the current blog and we can put some ouline
+          | about the blog. this can be long and long and long. so lets say this
+          | blog is about places, the we can say that many places in india need
+          | attention of visitors.
+        .blog-actions
+          a.btn.btn--default(ui-sref="blog") 
+            i.fa.fa-arrow-right 
+            | Read
+          button.btn.btn--default(type="button")
+            i.fa.fa-thumbs-up
+            | Like
+          button.btn.btn--default(type="button")
+            i.fa.fa-share 
+            | Share
+
+
+.slider(b-slider)
+  .slider__container
+    .slider__item.slider__item--active
+      +trending("This is the title of the blog", "./assets/img/blog3.jpg")
+      
+    .slider__item
+      +trending("This is the title of the second blog", "./assets/img/blog2.jpg")
+      
+    .slider__item
+      +trending("This is the title of the Third blog", "./assets/img/blog1.jpg")
+      
+    
+  //- arrows to control left and right slide 
+  span.slider__arrow.slider__arrow--left(s-ctrl-type="left")
+  span.slider__arrow.slider__arrow--right(s-ctrl-type="right")
+
+
+.search.search--blogs
+  .search__icon
+    i.fa.fa-search
+  .search__input
+    input(type="search" name="blogSearch" placeholder="Search for blogs...")
+.blogs
+  +card-blog
+  +card-blog
+  +card-blog
+  +card-blog

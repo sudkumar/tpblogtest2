@@ -1,0 +1,25 @@
+
+|<!DOCTYPE html>
+html(data-ng-app="Blog")
+  head
+    meta( charset="utf-8")
+    meta( http-equiv="X-UA-Compatible" content="IE=edge")
+    meta( name="viewport" content="width=device-width, initial-scale=1")
+    title Blog | Tourepedia
+    link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+    link( rel="stylesheet" href="./assets/css/blog.min.css" media="screen" title="main style sheet" charset="utf-8")
+  body
+    
+    include ./jade/includes/b-menu.jade
+    
+    ui-view(name="main")
+    
+    include ./jade/includes/b-about.jade
+
+    b-move-top(data-ng-style="{background: white}")
+
+    b-modal
+
+    //- script(type="text/javascript" src="./js/slider.js")
+    script(type="text/javascript" src="./assets/js/libs.min.js")
+    script(type="text/javascript" src="./assets/js/blog.min.js")

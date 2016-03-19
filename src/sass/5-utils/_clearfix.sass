@@ -1,0 +1,11 @@
+/*Clearfix class: Removes floating overlay of a element
+	Usage:
+		.container.cf
+			.box(style="float:left")
+				img(...)
+ */
+
+.cf:after
+	content: " "
+	display: table
+	clear: both

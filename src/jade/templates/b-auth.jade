@@ -1,0 +1,10 @@
+.modal__wrapper.auth-modal(data-ng-init="wants='login'" )
+	.modal__container.sm
+		.swap__container
+			.swap__section.swap-left(data-ng-class="{'active': wants == 'login'}")
+				// inlucde the login form	
+				include login-form.jade
+
+			.swap__section.swap-right(data-ng-class="{'active': wants == 'signup'}")
+				// include the signup form
+				include signup-form.jade

@@ -1,0 +1,43 @@
+
+.card
+  display: inline-block
+  background: white
+  border-radius: 5px
+
+
+  &--blog
+    width: 300px
+    overflow: hidden
+    margin: 20px 10px
+    vertical-align: top
+    font-size: 1rem
+    border: 1px solid #f0f0f0
+    
+    .blog__info
+      color: gray
+      font-size: 12px
+
+    @media all and (max-width: 660px)
+      display: block
+      margin: 10px auto
+
+  &__image
+    width: 100%
+    max-width: 100%
+    height: auto
+    overflow: hidden
+
+  &__title
+    padding: 10px
+    color: dimgray
+    font-size: 1.5rem
+    font-weight: bolder
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+
+  &__body
+    padding: 10px
+
+  &__footer
+    font-size: 1rem
+    border-top: 1px solid rgba(0,0,0,.1)
+    padding: 5px 0

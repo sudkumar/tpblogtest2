@@ -1,0 +1,35 @@
+// add the header
+.modal__header
+	.title Login
+	span.modal__close(data-ng-click="closeModal()"): i.fa.fa-close
+.modal__body
+	// create a login form for email and password
+	form.login-form(name="loginForm" novalidate)
+		fieldset.input__group.fl
+			input.rnd(type="email" id="email" required)
+			label(for="email") Email
+		fieldset.input__group.fl
+			input.rnd(type="password" id="password" required)
+			label(for="password") Password
+		fieldset.remember-forgot
+			div.remember.rc__group
+				input.rc__input(type="checkbox" id="rememberMe" )
+				label.rc__btn.checkbox(for="rememberMe")
+				label.rc__label(for="rememberMe") Remember me
+			div.forgot
+				a(href="") Forgot Password?
+		fieldset.input__group
+			button.btn.submit(type="submit" ng-disabled="loginForm.$invalid") Login
+	// here ends the login form	
+
+	// Here give other options to login 
+	.other-options
+		p Or use your social network
+		.options
+			.option: button.btn(type="button"): i.fa.fa-facebook
+			.option: button.btn(type="button"): i.fa.fa-google-plus
+	// here ends the other options
+
+// now let the user to signup
+.modal__footer
+	p Don't have an account ? Quick <button class="btn link" data-ng-click="wants = 'signup'">Signup</button>

@@ -1,0 +1,40 @@
+/* Panel Css
+	Usage:
+		panel
+			panel__header,panel__header--default
+				h1 I am title
+			panel__body
+				p This is thing
+			panel__footer
+				p I am the footer of the panel
+ */
+
+// Block component panel
+@at-root .panel
+	background: transparent
+	position: relative
+	border-radius: 3px
+	background: white
+	box-shadow: 0px 1px 1px 1px rgba(black, .1)
+	// Elements
+	&__header
+		position: relative
+		padding: 10px
+		border-bottom: 1px solid rgba(black, .1)
+		border-radius: 3px 3px 0 0
+
+		&--default
+			border: none
+			background: silver
+
+	&__body
+		padding: 15px 10px
+		border-bottom: 1px solid rgba(black, .2) inset
+
+	&__footer
+		padding: 10px
+		border-radius: 0 0 3px 3px
+
+		&--default
+			border: none
+			background: silver

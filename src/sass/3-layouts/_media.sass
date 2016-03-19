@@ -1,0 +1,22 @@
+/* Media module to display an image and some description
+	Usage:
+		.media
+			.media__img
+				img(...)
+			.media__body
+				p
+ */
+
+@at-root .media
+	&::after
+	  content: ""
+	  display: table
+	  clear: both
+
+	&__image
+	  display: block
+	  float: left
+	  margin-right: 10px
+
+	&__body
+  	overflow: auto

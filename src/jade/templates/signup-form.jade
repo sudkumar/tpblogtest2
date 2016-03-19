@@ -1,0 +1,21 @@
+.modal__header
+	.title Signup
+	span.modal__close(data-ng-click="closeModal()"): i.fa.fa-close
+.modal__body
+	form.signup-form( name="signupForm" novalidate)
+		fieldset.input__group.fl
+			input.rnd(type="text" id="name" name="name" required)
+			label(for="name") Name
+		fieldset.input__group.fl
+			input.rnd(type="email" id="email" name="email" required)
+			label(for="email") Email
+		fieldset.input__group.fl
+			input.rnd(type="password" id="password" name="password" required)
+			label(for="password") Password
+		fieldset.input__group.fl
+			input.rnd(type="password" id="rePassword" name="rePassword" required)
+			label(for="rePassword") Confirm Password
+		filedset.input__group
+			button.btn.submit(type="submit" data-ng-disabled="signupForm.$invalid") Submit
+.modal__footer
+	p Already have an account? <button class="btn link" data-ng-click="wants = 'login'">Login here.<button>

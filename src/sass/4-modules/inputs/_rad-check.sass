@@ -1,0 +1,68 @@
+/* Radio & Checkbox groups styles
+  Usage:
+    .rc__group
+      input.rc__input(type="checkbox" id="savePassword") // this will be hidden
+      label(for="savePassword").rc__btn.checkbox // this will be visible to the user
+      label(for="savePassword").rc__label Save Password ?
+ */
+.rc
+  &__group
+    display: table
+    margin-top: 10px
+
+
+  &__input
+    // make the default input hidden
+    opacity: 0
+    position: absolute
+
+    // make the button visible if input is checked
+    &:checked
+      & + .rc__btn:before, & + .rc__btn:before
+        transform: translateZ(0) scale(.5)
+
+
+
+
+  &__btn
+    cursor: pointer
+    display: table-cell
+    float: left
+    height: 14px
+    width: 14px
+    margin-right: 10px
+    position: relative
+
+    &.checkbox, &.radio
+      // set the default state of before and after
+      &:before, &:after
+        box-sizing: border-box
+        content: ' '
+        border-radius: 50%
+        display: block
+        height: 100%
+        position: absolute
+        width: 100%
+        border: 2px solid silver
+
+
+      // add the transition for before element
+      &:before
+        border: none
+        background: rgba(0, 0, 0, 0.6)
+        transform: translateZ(0) scale(0)
+        transition: transform linear .3s
+
+
+    &.checkbox
+      // remove the border radius for checkboxes
+      &:before, &:after
+        border-radius: 0
+
+
+
+
+
+  &__label
+    // make the label also display table-cell
+    display: table-cell

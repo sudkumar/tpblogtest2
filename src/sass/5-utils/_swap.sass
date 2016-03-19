@@ -1,0 +1,42 @@
+/*
+	Swapping utility for swaping the content of element
+	Usage:
+		.swap__container
+			.swap__section.swap-up This content will be swapped up
+			.swap__section.swap-right.active This content will be in the view
+	*/
+
+.swap
+	&__container
+		position: relative
+		min-height: 10px
+		min-width: 10px
+		width: 100%
+		height: 100%
+		overflow: hidden
+
+
+	&__section
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		transition: opcacity linear 1s, transform ease-in-out .5s
+		opacity: 0
+		&.active
+			transform: translate(0, 0)
+			opacity: 1
+			position: relative
+
+
+	&-up
+		transform: translateY(-100%)
+
+	&-right
+		transform: translateX(100%)
+
+	&-down
+		transform: translateY(100%)
+
+	&-left
+		transform: translateX(-100%)

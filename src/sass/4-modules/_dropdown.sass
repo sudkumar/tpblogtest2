@@ -1,0 +1,36 @@
+
+.dropdown
+	&.open
+		ul
+			visibility: visible
+			opacity: 1
+
+	ul
+
+		position: absolute
+		top: 100%
+		right: 0
+		background: white
+		line-height: 1.6
+		visibility: hidden
+		opacity: 0
+		box-shadow: 0px 3px 7px rgba(0,0,0,.5)
+		border: 1px solid rgba(0, 0, 0, .3)
+		transition: visibility linear .1s, opacity linear .15s
+		&:before, &:after
+			content: " "
+			position: absolute
+			width: 0px
+			height: 0px
+			top: -20px
+			right: 10px
+			border-width: 10px
+			border-color: transparent transparent white transparent
+			border-style: solid
+
+
+		&:before
+			border-color: transparent transparent rgba(0, 0, 0, .3) transparent
+			top: -22px
+			right: 9px
+			border-width: 11px

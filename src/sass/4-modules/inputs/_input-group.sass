@@ -1,0 +1,59 @@
+
+.input__group
+	position: relative
+	padding-top: 10px
+	// style for floating label
+	&.fl
+		padding-top: 25px
+
+		label
+			position: absolute
+			pointer-events: none
+			bottom: 5px
+			left: 10px
+			transition: all linear .15s
+
+
+		input.rnd + label
+			left: 20px
+			bottom: 10px
+
+
+		// move the floating label when group has focus or values
+		&.has-focus, &.has-value
+			label
+				bottom: 35px
+				left: 0px
+				font-size: 90%
+				color: dimgray
+
+			input.rnd + label
+				bottom: 45px
+				left: 0px
+
+
+
+
+	label
+		display: block
+		width: 100%
+		color: silver
+
+
+	input
+		display: block
+		width: 100%
+		outline: none
+		box-shadow: none
+		border: 1px solid silver
+		padding: 5px 10px
+		transition: all linear .15s
+		background: transparent
+		color: dimgray
+		&:focus
+			border-color: #3AA9E3
+
+
+		&.rnd
+			padding: 10px 20px
+			border-radius: 100px

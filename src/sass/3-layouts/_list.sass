@@ -1,0 +1,28 @@
+
+/*
+ * List module for laying out lists
+ */
+
+@at-root .list
+  list-style-type: none
+
+  &__item
+    display: block
+    margin: 5px auto
+
+    &--first
+      margin-top: 0
+
+    &--last
+    margin-bottom: 0
+
+    &--inline
+      display: inline-block
+      margin: 0 5px
+      vertical-align: baseline
+
+      &--first
+        margin-left: 0
+
+      &--last
+        margin-right: 0

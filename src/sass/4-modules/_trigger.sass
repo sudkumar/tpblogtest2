@@ -1,0 +1,73 @@
+@at-root .trigger
+    position: relative
+    z-index: 10
+    display: inline-block
+    vertical-align: middle
+    +size(50px)
+    line-height: 50px
+    border-radius: 50%
+    overflow: hidden
+    white-space: nowrap
+    text-indent: 100%
+    text-align: center
+    +transition(transform 0.5s)
+    // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2)
+    background-color: $theme-color
+
+    
+    // some movement in bar when hovering over
+    &--inactive:hover &__icon
+        &::before
+            +transform(translateY(-8px))
+
+        &::after
+            +transform(translateY(8px)) 
+
+    // rotate the trigger when it's active
+    &--active
+        +transform(rotate(-180deg)) 
+
+    // rotote the upper and lower bars when tigger is active
+    &--active &__icon    
+        &::before, &::after
+            width: 50%
+        &::before
+            +transform(rotate(45deg))
+        &::after
+            +transform(rotate(-45deg))  
+    &--right &__icon
+        &::before, &::after
+            +position(absolute, 0 null null 0)
+        &::before
+            +transform-origin(left bottom)
+        &::after
+            +transform-origin(left top)    
+    
+    &--right#{&}--active &__icon            
+        &::before
+            +transform(rotate(-45deg))
+        &::after
+            +transform(rotate(45deg))  
+    &__icon
+        +position(absolute, 50% null null 50%)
+        +transform(translateX(-50%) translateY(-50%))
+        +size(22px 2px)
+        box-sizing: border-box
+        background: white
+
+        &::before, &::after
+            content: ""
+            +position(absolute, 0 0 null null)
+            background-color: inherit
+            +size(100%)
+            +transform(translateZ(0))
+            backface-visibility: hidden
+            +transition(transform 0.5s, width 0.5s, top 0.3s)
+
+        &::before
+            +transform(translateY(-6px))    
+            +transform-origin(right top)
+
+        &::after
+            +transform(translateY(6px))
+            +transform-origin(right bottom) 
